@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Memories</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Lora', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffe4e1, #ffffff);
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        /* Welcome Page Styles */
+        #welcome-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            transition: opacity 1s;
+        }
+        #welcome-page.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .welcome-container {
+            text-align: center;
+            color: #ffffff;
+        }
+        .welcome-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .welcome-message {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+        .start-button {
+            background-color: #ff6f91;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .start-button:hover {
+            background-color: #d6336c;
+            transform: scale(1.05);
+        }
+
+        /* Main Content Styles (Existing) */
+        header {
+            background-color: #ffccd5;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #d6336c;
+            font-family: 'Dancing Script', cursive;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .container:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            z-index: -1;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            border-radius: 16px;
+            filter: blur(20px);
+        }
+        .note {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            flex: 2;
+        }
+        .images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 20px;
+        }
+        .images img, .images video {
+            width: 300px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .images img:hover, .images video:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ffccd5;
+            color: #d6336c;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Floating Hearts Animation */
+        @keyframes floating-hearts {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6f91;
+            transform: rotate(45deg);
+            animation: floating-hearts 5s linear infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6f91;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="welcome-page">
+    <div class="welcome-container">
+        <h1 class="welcome-title">Welcome to a Year of Memories!</h1>
+        <p class="welcome-message">Get ready to relive the most heartwarming moments of the year.</p>
+        <button class="start-button" onclick="startExperience()">Start</button>
+    </div>
+</div>
+
+<header>
+    <h1>Happy New Year!</h1>
+</header>
+
+<div class="container">
+    <p class="note">
+        My Lovely Madam😁<samp style="color: red;">❤</samp>,
+        <br><br>
+        As this year comes to an end, I find myself reflecting on all the memories we’ve created and the moments we’ve shared. It has truly been a remarkable journey, and I am so grateful that you were a part of it.
+        <br><br>
+        This year will forever be special to me because it’s the year I gathered the courage to confess my feelings for you. I never expected anything in return; I just wanted to be honest with myself and with you. What truly amazed me was the kindness and care with which you handled everything. Even though you didn’t feel the same, you treated me with so much love and respect<samp style="color: red;">❤</samp>, and for that, I can’t thank you enough.
+        <br><br>
+        There were moments this year that brought us closer, and they mean the world to me. I’ll never forget the first time we met and how nervous we both were at the theater. The "Popcorn Incident" still makes me laugh😂! But what stayed with me the most was the happiness of finally sitting next to you—something I had been looking forward to all year😅.
+        <br><br>
+        Your presence on my birthday was the best gift I could have asked for😁. It made my day unforgettable and filled my heart with so much joy🕺🏻. That birthday was, without a doubt, the best I’ve ever had, and it was all because of you🥹<samp style="color: red;">❤</samp>.
+        <br><br>
+        I also cherish the day we went to the fair. Even though we didn’t get to enjoy the rides😅😂, I think it turned out to be just perfect. Spending time alone with you, opening up to each other, and watching that hilarious😂😂 "Kullu Sahiba" video—it was such a fun and heartwarming day. Seeing you so happy made me even happier.
+        <br><br>
+        I know life doesn’t always go the way we want, but I truly believe that Bhagwan ji has a plan for us🙏🏻🙏🏻. No matter where this journey takes us, I’ll always hope for the best—for both of us 🤞🏻<samp style="color: red;">❤❤</samp>.
+        <br><br>
+        Thank you for everything, for every laugh, every moment, and for being you. You’ve made this year unforgettable, and I’m so lucky to have shared it with you🫂🫂.
+        <br><br>
+        Wishing you a beautiful New Year ahead!
+        <br><br>
+        With all my heart<samp style="color: red;">❤❤</samp>,<br>
+        Tera Pagal Ldka👻
+    </p>
+
+    <div class="images">
+        <img class="first" src="photo5.jpg" alt="Special Moment 3">
+        <img src="photo2.jpg" alt="Special Moment 2">
+        <img src="photo3.jpg" alt="Special Moment 3">
+        <video src="video2.mp4"></video>
+        <img src="photo1.jpg" alt="Special Moment 1">
+    </div>
+</div>
+
+<footer>
+    &copy; 2024 - A Year to Remember
+</footer>
+
+<script>
+    // Welcome Page Functionality
+    function startExperience() {
+        const welcomePage = document.getElementById('welcome-page');
+        welcomePage.classList.add('hidden');
+        setTimeout(() => welcomePage.style.display = 'none', 1000);
+    }
+
+    // Generate floating hearts
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+        document.body.appendChild(heart);
+
+        // Remove the heart after animation ends
+        setTimeout(() => heart.remove(), 5000);
+    }
+
+    // Generate hearts periodically
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
